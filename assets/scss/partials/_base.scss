@@ -29,7 +29,7 @@ img {
 // Header
 // ---
 
-// You might want to split this into your own partial!
+// You might want to split these into your own partials!
 
 
 
@@ -38,8 +38,8 @@ img {
 // Main Site Content
 // ---
 
-.wrapper {
-	max-width: $screen-md; // I'm using a pretty narrow wrapper, you might want this to be $screen-lg depending on your layout.
+.contain {
+	max-width: $screen-md; // I'm using a pretty narrow container, you might want this to be $screen-lg depending on your layout.
 	margin: 0 auto;
 }
 
@@ -56,10 +56,5 @@ img {
 // ---
 
 
-
-
-// ---
-// Misc Utilities
-// ---
 
 
