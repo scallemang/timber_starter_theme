@@ -1,2 +1,2 @@
-vendor
-wp-content
+.DS_Store
+.sass-cache
