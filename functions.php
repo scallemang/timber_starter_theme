@@ -67,7 +67,7 @@ function my_scripts() {
 		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 	}
 
-	// Enqueue stylesheet and JS file.
+	// Enqueue stylesheet and JS file with a jQuery dependency.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '1.0.0', true );
 }
