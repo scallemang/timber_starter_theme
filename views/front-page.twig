@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		
+		{# Add classes to specify this post type and a unique ID. Note that it wouldn't be wise to style this ID because you may be using a different database at some point, however it's not hurting anyone and could be useful for prototyping. #}
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+
+				{# Get the page's title #}
+				<h1>{{post.title}}</h1>
+				
+				<div class="article-body">
+					{# Get the page's content editor data #}
+					{{post.content}}
+				</div>
+				
+				{# We have created a custom radio button field for the display of the header image. You can choose from either a gallery or an image. In this conditional, we run some code based on that choice. #}
+				
+				{# If the field called type_of_header is equal to "Gallery", do the following: #}
+				{% if post.type_of_header == 'Gallery' %}
+					
+					{# Since a Gallery field returns an array of attachment IDs, we need to loop through them. #}
+					{% for id in post.home_page_gallery %}
+						
+						{# Retrieve the TimberImage object from the ID returned in the gallery array. Create a variable to store that object so we don't have to keep writing TimberImage(id). This is analogous to creating variables to store jQuery objects. #}
+						{% set img = TimberImage(id) %}
+						
+						<div class="gallery-image">
+							{# Get the title of the image by calling the "title" value from the TimberImage object. #}
+							<h5>{{img.title}}</h5>
+
+							{# Get the image's path, called src (sometimes this is called URL in ACF.) Then add an alt tag with the image's title. #}
+							<img src="{{img.src}}" alt="{{img.title}}">
+						</div>
+					{# End the loop for the gallery array #}
+					{% endfor %}
+
+				{# Our next condition is for the header type of image. This is an image field, and we treat it similarly except it returns only one ID instead of an array like the gallery. We can test this using dump() #}
+				{% elseif post.type_of_header == 'Image' %}
+
+					{# Get the TimberImage object from the ID returned from the post.home_header_image custom field #}
+					{% set hdr_img = TimberImage(post.home_header_image) %}
+
+					{# Get the source and title data from the TimberImage object above. We are storing the object in a variable to help shorten up our code and make it more readable. #}
+					<img src="{{hdr_img.src}}" alt="{{hdr_img.title}}">
+
+				{# End the conditional. #}
+				{% endif %}
+				
+
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}
