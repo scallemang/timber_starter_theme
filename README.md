@@ -1,5 +1,6 @@
 # Timber Starter Theme (Tackle Box version)
-### With comments!
+
+With comments!
 
 ## What's here?
 
