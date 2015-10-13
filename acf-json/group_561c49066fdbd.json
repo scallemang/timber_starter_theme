@@ -1,0 +1,111 @@
+{
+    "key": "group_561c49066fdbd",
+    "title": "Home Page Fields",
+    "fields": [
+        {
+            "key": "field_561c50b2fa40e",
+            "label": "Type of Header",
+            "name": "type_of_header",
+            "type": "radio",
+            "instructions": "Select the type of header you would like.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Gallery": "Gallery",
+                "Image": "Image"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical"
+        },
+        {
+            "key": "field_561c497a95dc6",
+            "label": "Home Header Image",
+            "name": "home_header_image",
+            "type": "image",
+            "instructions": "Upload a 1200 x 600 image for the header.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_561c50b2fa40e",
+                        "operator": "==",
+                        "value": "Image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_561c5056fa40d",
+            "label": "Home Page Gallery",
+            "name": "home_page_gallery",
+            "type": "gallery",
+            "instructions": "Select the nicest pictures for the homepage.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_561c50b2fa40e",
+                        "operator": "==",
+                        "value": "Gallery"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 3,
+            "max": 3,
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1444696415
+}
