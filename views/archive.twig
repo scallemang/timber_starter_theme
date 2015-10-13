@@ -1,0 +1,8 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<pre>this is archive.twig</pre>
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+{% endblock %}
