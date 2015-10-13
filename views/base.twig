@@ -7,7 +7,7 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
+		<header class="header">
 			{% block header %}
 				<div class="contain">
 					<h1 class="hdr-logo" role="banner">
@@ -36,11 +36,13 @@
 		</header>
 
 		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="contain {{sidebar_class}}">
+				{% if title %}<h1>{{title}}</h1>{% endif %}
+				
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
+			
 			</div>
 			{% if sidebar %}
 				<aside class="layout-sidebar">
