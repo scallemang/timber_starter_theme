@@ -1,27 +1,44 @@
+.nav-main {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.75s ease;
 
-// ---
-// Nav
-// ---
-// I like this toggle menu a lot: https://codepen.io/bradfrost/pen/sHvaz
+	&.active {
+		background-color: purple;
+		max-height: $screen-md;
+	}
 
-// Base mobile nav styles here.
-
-.nav {
-	list-style-type: none;
-	padding-left: 0;
-
-	// A breakpoint for the larger screens
 	@include bp(md) {
-
-		li {
-			display: inline-block;
-			padding-right: $h4;
-			
-			&:last-child {
-				padding-right: 0;
-			}
-		}
-
+		max-height: none;
 	}
 }
 
+.nav-items {
+	list-style-type: none;
+	padding-left: 0;
+
+	@include bp(md) {
+		& > li {
+			display: inline-block;
+		}
+		background-color: red;
+	}
+}
+
+	.nav-item-link {
+		padding: 1.4rem;
+	}
+
+
+// Link to open the nav
+
+.nav-link {
+	
+	@include bp(md) {
+		display: none;
+	}
+
+	&.active {
+		background-color: blue;
+	}
+}
