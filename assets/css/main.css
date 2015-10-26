@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -22,7 +22,8 @@ body {
    ========================================================================== */
 /**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
 article,
@@ -34,6 +35,7 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -74,7 +76,7 @@ template {
  * Remove the gray background color from active links in IE 10.
  */
 a {
-  background: transparent; }
+  background-color: transparent; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
@@ -354,146 +356,6 @@ td,
 th {
   padding: 0; }
 
-.text-center {
-  text-align: center; }
-
-.text-left {
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
-.spacer-top {
-  margin-top: 1.1rem; }
-
-.spacer-bot {
-  margin-bottom: 1.1rem; }
-
-body {
-  font-family: Georgia, serif;
-  line-height: 1.5; }
-
-a,
-a:visited,
-a:link {
-  color: #45B29D;
-  text-decoration: none; }
-  a:hover, a:focus,
-  a:visited:hover,
-  a:visited:focus,
-  a:link:hover,
-  a:link:focus {
-    color: #29685c; }
-  a:active,
-  a:visited:active,
-  a:link:active {
-    color: black; }
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.5;
-  font-family: Helvetica, sans-serif;
-  margin-bottom: 0; }
-
-h1 {
-  font-size: 2.86rem;
-  margin-top: 1.98rem; }
-
-h2 {
-  font-size: 2.42rem;
-  margin-top: 1.54rem; }
-
-h3 {
-  font-size: 1.98rem;
-  margin-top: 1.54rem; }
-
-h4 {
-  font-size: 1.54rem;
-  margin-top: 1.1rem; }
-
-h5 {
-  font-size: 1.32rem;
-  margin-top: 1.1rem; }
-
-h6 {
-  font-size: 0.88rem;
-  margin-top: 1.1rem; }
-
-p {
-  margin-top: 1.1rem;
-  font-size: 1.1rem; }
-
-small {
-  font-size: 0.88rem; }
-
-.btn--default {
-  background-color: #334D5C;
-  color: #fefefe;
-  padding: 1.1rem 1.54rem;
-  text-decoration: none; }
-
-.btn--info {
-  background-color: #57849e;
-  color: #1F232A;
-  padding: 1.1rem 1.54rem;
-  text-decoration: none; }
-
-*:focus {
-  outline: 0; }
-
-label, select {
-  display: block; }
-
-textarea {
-  overflow: auto;
-  vertical-align: top; }
-
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"] {
-  width: 100%;
-  border: 1px dotted #45B29D; }
-  textarea:focus,
-  input[type="text"]:focus,
-  input[type="password"]:focus,
-  input[type="datetime"]:focus,
-  input[type="datetime-local"]:focus,
-  input[type="date"]:focus,
-  input[type="month"]:focus,
-  input[type="time"]:focus,
-  input[type="week"]:focus,
-  input[type="number"]:focus,
-  input[type="email"]:focus,
-  input[type="url"]:focus,
-  input[type="search"]:focus,
-  input[type="tel"]:focus {
-    border-color: #45B29D; }
-
-input[type="radio"],
-input[type="checkbox"] {
-  line-height: normal;
-  cursor: pointer; }
-
-.nav {
-  list-style-type: none;
-  padding-left: 0; }
-  @media (min-width: 48em) {
-    .nav li {
-      display: inline-block;
-      padding-right: 1.54rem; }
-      .nav li:last-child {
-        padding-right: 0; } }
-
 * {
   box-sizing: border-box; }
 
@@ -501,7 +363,45 @@ img {
   max-width: 100%; }
 
 .contain {
-  max-width: 48em;
+  max-width: 50em;
+  width: 90%;
   margin: 0 auto; }
+
+h1 {
+  font-size: 2.64rem;
+  margin-top: 2.2rem; }
+
+h2 {
+  font-size: 2.2rem;
+  margin-top: 1.76rem; }
+
+.nav-main {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.75s ease; }
+  .nav-main.active {
+    background-color: purple;
+    max-height: 42rem; }
+  @media (min-width: 42rem) {
+    .nav-main {
+      max-height: none; } }
+
+.nav-items {
+  list-style-type: none;
+  padding-left: 0; }
+  @media (min-width: 42rem) {
+    .nav-items {
+      background-color: red; }
+      .nav-items > li {
+        display: inline-block; } }
+
+.nav-item-link {
+  padding: 1.4rem; }
+
+@media (min-width: 42rem) {
+  .nav-link {
+    display: none; } }
+.nav-link.active {
+  background-color: blue; }
 
 /*# sourceMappingURL=main.css.map */

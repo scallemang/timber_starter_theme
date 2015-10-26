@@ -5,5 +5,14 @@
 $(document).ready( function() {
 
 	// Put some nice JavaScript in here.
+	var $nav_main = $('#nav-main'),
+		$nav_link = $('#nav-link');
+
+	$nav_link.click( function() {
+		console.log('clicked!');
+		$nav_main.toggleClass('active');
+		$nav_link.toggleClass('active');
+		return false;
+	});
 
 });
