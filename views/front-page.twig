@@ -31,7 +31,7 @@
 							<h5>{{img.title}}</h5>
 
 							{# Get the image's path, called src (sometimes this is called URL in ACF.) Then add an alt tag with the image's title. #}
-							<img src="{{img.src}}" alt="{{img.title}}">
+							<img src="{{img.src|resize(800)}}" alt="{{img.title}}">
 						</div>
 					{# End the loop for the gallery array #}
 					{% endfor %}
