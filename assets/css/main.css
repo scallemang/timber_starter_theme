@@ -404,4 +404,7 @@ h2 {
 .nav-link.active {
   background-color: blue; }
 
+input[type="text"] {
+  border-radius: 3px; }
+
 /*# sourceMappingURL=main.css.map */
