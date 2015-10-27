@@ -30,6 +30,11 @@ if ( is_day() ) {
 } else if ( is_category() ) {
 	$data['title'] = single_cat_title( '', false );
 	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
+} else if (is_tax()){
+    $term = get_queried_object(); // Is this the appropriate way to do it?
+	$data['title'] = $term->name;
+	$data['term'] = $term;
+	array_unshift($templates, 'taxonomy-'.$term->taxonomy.'.twig', 'taxonomy.twig');
 } else if ( is_post_type_archive() ) {
 	$data['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
