@@ -1,5 +1,6 @@
 <?php
 
+// If the Timber plugin isn't activated, print a notice in the admin.
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 			echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php' ) ) . '</a></p></div>';
@@ -7,8 +8,11 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+
+// Create our version of the TimberSite object
 class StarterSite extends TimberSite {
 
+	// This function applies some fundamental WordPress setup, as well as our functions to include custom post types and taxonomies.
 	function __construct() {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
@@ -20,9 +24,13 @@ class StarterSite extends TimberSite {
 		parent::__construct();
 	}
 
-	// Note that the following included files only need to contain the taxonomy/CPT/Menu arguments and register_whatever function. They are initialized here.
-	// http://generatewp.com is nice
-	
+
+	// Abstracting long chunks of code.
+
+	// The following included files only need to contain the taxonomy or custom post type arguments and register_whatever function. They are applied to WordPress in these functions. 
+
+	// The point of having separate files is solely to save space in this file. Think of them as a standard PHP include or require.
+
 	function register_post_types(){
 		require('lib/custom-types.php');
 	}
@@ -31,17 +39,24 @@ class StarterSite extends TimberSite {
 		require('lib/taxonomies.php');
 	}
 
+
+	// Access data site-wide.
+	
+	// This function adds data to the global context of your site. In less-jargon-y terms, any values in this function are available on any view of your website. Anything that occurs on every page should be added here. 
+	
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
+
+		// Our menu occurs on every page, so we add it to the global context.
 		$context['menu'] = new TimberMenu();
+
+		// This 'site' context below allows you to access main site information like the site title or description.
 		$context['site'] = $this;
 		return $context;
 	}
 
+	// Here you can add your own fuctions to Twig. Don't worry about this section if you don't come across a need for it.
+	// See more here: http://twig.sensiolabs.org/doc/advanced.html
 	function add_to_twig( $twig ) {
-		/* this is where you can add your own fuctions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( 'myfoo', new Twig_Filter_Function( 'myfoo' ) );
 		return $twig;
@@ -61,15 +76,13 @@ new StarterSite();
 // Enqueue scripts
 function my_scripts() {
 
-	// Use jQuery from CDN, enqueue in footer
-	if (!is_admin()) {
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-	}
-
-	// Enqueue stylesheet and JS file with a jQuery dependency.
+	// Enqueue our stylesheet and JS file with a jQuery dependency. 
+	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
+
+
+
