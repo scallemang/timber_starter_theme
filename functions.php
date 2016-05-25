@@ -27,7 +27,7 @@ class StarterSite extends TimberSite {
 
 	// Abstracting long chunks of code.
 
-	// The following included files only need to contain the taxonomy or custom post type arguments and register_whatever function. They are applied to WordPress in these functions. 
+	// The following included files only need to contain the taxonomy or custom post type arguments and register_whatever function. They are applied to WordPress in these functions.
 
 	// The point of having separate files is solely to save space in this file. Think of them as a standard PHP include or require.
 
@@ -41,9 +41,9 @@ class StarterSite extends TimberSite {
 
 
 	// Access data site-wide.
-	
-	// This function adds data to the global context of your site. In less-jargon-y terms, any values in this function are available on any view of your website. Anything that occurs on every page should be added here. 
-	
+
+	// This function adds data to the global context of your site. In less-jargon-y terms, any values in this function are available on any view of your website. Anything that occurs on every page should be added here.
+
 	function add_to_context( $context ) {
 
 		// Our menu occurs on every page, so we add it to the global context.
@@ -67,8 +67,8 @@ class StarterSite extends TimberSite {
 new StarterSite();
 
 
-/* 
- * 
+/*
+ *
  * My Functions (not from Timber)
  *
  */
@@ -76,7 +76,11 @@ new StarterSite();
 // Enqueue scripts
 function my_scripts() {
 
-	// Enqueue our stylesheet and JS file with a jQuery dependency. 
+	// Use jQuery from a CDN
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
+
+	// Enqueue our stylesheet and JS file with a jQuery dependency.
 	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/css/main.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true );

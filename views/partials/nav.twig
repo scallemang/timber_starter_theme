@@ -1,5 +1,5 @@
-<a href="#" id="nav-link" class="nav-link">Menu</a>
-<nav id="nav-main" class="nav-main" role="navigation">
+<a href="#" class="nav-trigger">Menu</a>
+<nav class="nav-main" role="navigation">
 	<ul class="nav-items">
 	{% for item in menu.get_items %}
 		<li class="nav-item {{item.classes | join(' ')}}">
@@ -16,4 +16,4 @@
 		</li>
 	{% endfor %}
 	</ul>
-</nav><!-- #nav -->
+</nav><!-- /.nav-main -->

@@ -4,7 +4,6 @@
 	transition: all 0.75s ease;
 
 	&.active {
-		background-color: purple;
 		max-height: $screen-md;
 	}
 
@@ -18,10 +17,9 @@
 	padding-left: 0;
 
 	@include bp(md) {
+		display: flex;
 		& > li {
-			display: inline-block;
 		}
-		background-color: red;
 	}
 }
 
@@ -32,13 +30,10 @@
 
 // Link to open the nav
 
-.nav-link {
-	
+.nav-trigger {
+
 	@include bp(md) {
 		display: none;
 	}
 
-	&.active {
-		background-color: blue;
-	}
 }

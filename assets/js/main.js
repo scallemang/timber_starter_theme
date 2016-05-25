@@ -5,13 +5,13 @@
 $(document).ready( function() {
 
 	// Put some nice JavaScript in here.
-	var $nav_main = $('#nav-main'),
-		$nav_link = $('#nav-link');
+	var $nav_main = $('.nav-main'),
+		$nav_trigger = $('.nav-trigger');
 
-	$nav_link.click( function() {
+	$nav_trigger.click( function() {
 		console.log('clicked!');
 		$nav_main.toggleClass('active');
-		$nav_link.toggleClass('active');
+		$nav_trigger.toggleClass('active');
 		return false;
 	});
 
