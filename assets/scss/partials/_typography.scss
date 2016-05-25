@@ -3,39 +3,22 @@
 // Typography
 // ---
 
-// I'm going to include some styles here, cause I like how I do it.
-// Note that I also include a placeholder selector (see _extends.scss) for each. This is so I can easily change the size of other type elements that may not necessarily be h1's, et al.
-
-
-// It's a great idea to use Webfont Loader instead of just including your webfonts them in the <head>. In that case, you'd use the $body-font-fallback and apply the real $body-font once the active class is added with the loader. That's what's in the commented section.
-// OMG I'm so confused. Read more here: https://github.com/typekit/webfontloader
-
-// Or, you know, just use this:
 body {
 	font-family: $body-font;
 	line-height: $line-height-base;
 }
-
-// Webfont loader magic (uncomment the above body style if using this):
-// body {
-// 	font-family: $body-font-fallback;
-// 	line-height: $line-height-base;
-
-// 	.wf-active & {
-// 		font-family: $body-font;
-// 	}
-// }
 
 a,
 a:visited,
 a:link {
 	color: $color-link;
 	text-decoration: none;
+}
 
+a {
 	&:hover, &:focus {
 		color: $color-link-hover;
 	}
-
 	&:active {
 		color: $color-link-active;
 	}

@@ -378,16 +378,11 @@ a:visited,
 a:link {
   color: #45B29D;
   text-decoration: none; }
-  a:hover, a:focus,
-  a:visited:hover,
-  a:visited:focus,
-  a:link:hover,
-  a:link:focus {
-    color: #29685c; }
-  a:active,
-  a:visited:active,
-  a:link:active {
-    color: black; }
+
+a:hover, a:focus {
+  color: #29685c; }
+a:active {
+  color: black; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
@@ -438,7 +433,7 @@ small {
   text-decoration: none; }
 
 *:focus {
-  outline: 0; }
+  outline: 1px dotted #aaa; }
 
 label, select {
   display: block; }
@@ -489,22 +484,23 @@ input[type="checkbox"] {
   overflow: hidden;
   transition: all 0.75s ease; }
   .nav-main.active {
-    max-height: 48em; }
-  @media (min-width: 48em) {
+    max-height: 52em; }
+  @media (min-width: 52em) {
     .nav-main {
       max-height: none; } }
 
 .nav-items {
   list-style-type: none;
   padding-left: 0; }
-  @media (min-width: 48em) {
+  @media (min-width: 52em) {
     .nav-items {
-      display: flex; } }
+      display: flex;
+      flex-wrap: wrap; } }
 
 .nav-item-link {
   padding: 1.4rem; }
 
-@media (min-width: 48em) {
+@media (min-width: 52em) {
   .nav-trigger {
     display: none; } }
 
@@ -515,7 +511,7 @@ img {
   max-width: 100%; }
 
 .wrapper {
-  max-width: 48em;
+  max-width: 52em;
   width: 93%;
   margin: 0 auto; }
 

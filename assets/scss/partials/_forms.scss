@@ -12,9 +12,9 @@
 // Here are the basic form selectors I usually style:
 // (much inspired by the setup from http://themble.com/bones)
 
-// Remove the blue outline from Chrome
+// Remove the blue outline from Chrome and replace with something nicer.
 *:focus {
-    outline: 0;
+    outline: 1px dotted #aaa;
 }
 
 label, select {
