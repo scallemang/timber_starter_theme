@@ -3,6 +3,13 @@ Header
 - Nav items
 - Tagline
 
+Home
+- Tagline intro
+- Header photo
+- Summary of services
+- Icon and link out to each service
+- Prompt to contact
+
 About
 - Photo
 - Concise tagline, 2 sentences
