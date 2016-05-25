@@ -1,46 +1,43 @@
-{% block html_head_container %}
-
-{% include 'html-header.twig' %}
+{% block html_head %}
+	{% include 'html-header.twig' %}
 	{% block head %}
 	{% endblock %}
 	</head>
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header">
+		<header class="site-header">
 			{% block header %}
-				<div class="contain">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.link}}" rel="home">{{site.name}}</a>
+				<div class="wrapper">
+					<h1 class="site-logo" role="banner">
+						<a class="site-logo-link" href="{{site.link}}" rel="home">{{site.name}}</a>
 					</h1>
 					{% include 'partials/nav.twig' %}
 				</div>
 			{% endblock %}
 		</header>
 
-		<section id="content" role="main" class="content-wrapper">
-			<div class="contain {{sidebar_class}}">
-				{% if title %}<h1>{{title}}</h1>{% endif %}
-				
+		<main role="main" class="site-main">
+			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
-			
 			</div>
 			{% if sidebar %}
-				<aside class="layout-sidebar">
+				<aside class="main-sidebar">
 					{{sidebar}}
 				</aside>
 			{% endif %}
-		</section>
+		</main>
 
-		{% block footer %}
-			<footer id="footer">
-				<div class="contain">
+		<footer class="site-footer">
+			{% block footer %}
+				<div class="wrapper">
 					{% include 'footer.twig' %}
 				</div>
-			</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
+			{% endblock %}
+		</footer>
+		{{ function('wp_footer') }}
+
 	</body>
 </html>

@@ -2,20 +2,6 @@
 
 {% block content %}
 	{% for post in posts %}
-		
-		{# 
-
-			This is a cool trick. Rather than including only tease.twig, we can include the tease partial based on the post type. This lets us use a file like tease-cpt_name.twig that will be included because of the post.post_type value below. 
-
-			So, for example, if you have a post type with the name of "lesson" (notice all lowercase because that's what it's called in the code), you can create a file called tease-lesson.twig. Similarly, if you had a CPT for "recipe", you can create a tease-recipe.twig.
-
-
-			You'll notice we are also including tease.twig. This acts as a fallback if there is no tease-post_type.twig.
-
-			Handy, right?
-			
-		#}
-
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
 {% endblock %}
