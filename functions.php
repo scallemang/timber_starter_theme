@@ -21,13 +21,15 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_menus' ) );
+		add_action( 'init', array( $this, 'register_widgets' ) );
 		parent::__construct();
 	}
 
 
 	// Abstracting long chunks of code.
 
-	// The following included files only need to contain the taxonomy or custom post type arguments and register_whatever function. They are applied to WordPress in these functions.
+	// The following included files only need to contain the arguments and register_whatever functions. They are applied to WordPress in these functions that are hooked to init above.
 
 	// The point of having separate files is solely to save space in this file. Think of them as a standard PHP include or require.
 
@@ -37,6 +39,14 @@ class StarterSite extends TimberSite {
 
 	function register_taxonomies(){
 		require('lib/taxonomies.php');
+	}
+
+	function register_menus(){
+		require('lib/menus.php');
+	}
+
+	function register_widgets(){
+		require('lib/widgets.php');
 	}
 
 
