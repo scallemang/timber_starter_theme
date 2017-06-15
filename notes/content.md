@@ -82,12 +82,25 @@ Footer
 - Links to social media
 
 Users
-- Comedy fans
-  - Fans of Kids in the Hall, Monty Python, Best Show, Chapo Trap House, New Republic & Jeet Heer, Tim & Eric, E. B. White, H. L. Mencken, New Yorker, Jacobin, Baffler
+- Comedy fans; fans of:
+  - Kids in the Hall
+  - Monty Python
+  - Best Show
+  - Chapo Trap House
+  - New Republic & Jeet Heer
+  - Chris Elliott, Adam Resnick
+  - Robert Popper, Peter Serafinowicz
+  - Robert
+  - Tim & Eric
+  - E. B. White
+  - H. L. Mencken
+  - New Yorker
+  - Jacobin
+  - Baffler
 
 Websites
 - Magazine websites
-  - NewYorker.com
+  - http://newyorker.com
   - https://www.bloomberg.com/businessweek
   - https://www.wired.com/
   - https://www.technologyreview.com/
