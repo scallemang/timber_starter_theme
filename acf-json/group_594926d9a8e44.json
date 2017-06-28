@@ -1,14 +1,14 @@
 {
-    "key": "group_59441f20e46aa",
-    "title": "Podcast field group",
+    "key": "group_594926d9a8e44",
+    "title": "Audio (Podcast) field group",
     "fields": [
         {
-            "key": "field_59441f290cd96",
-            "label": "",
-            "name": "",
-            "type": "text",
+            "key": "field_594926e4398af",
+            "label": "Podcast URL",
+            "name": "podcast_url",
+            "type": "url",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -16,10 +16,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "placeholder": ""
         }
     ],
     "location": [
@@ -39,5 +36,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1497883023
+    "modified": 1497966335
 }

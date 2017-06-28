@@ -86,17 +86,18 @@ Users
   - Kids in the Hall
   - Monty Python
   - Best Show
-  - Chapo Trap House
-  - New Republic & Jeet Heer
   - Chris Elliott, Adam Resnick
   - Robert Popper, Peter Serafinowicz
-  - Robert
   - Tim & Eric
   - E. B. White
   - H. L. Mencken
+  
+- Fans of literary and/or leftists magazines:
   - New Yorker
   - Jacobin
   - Baffler
+  - Chapo Trap House
+  - New Republic & Jeet Heer
 
 Websites
 - Magazine websites
@@ -130,3 +131,5 @@ Websites
     - https://www.nytimes.com/interactive/2016/12/07/world/asia/rodrigo-duterte-philippines-drugs-killings.html
     - https://www.nytimes.com/interactive/2016/09/15/arts/design/national-museum-of-african-american-history-and-culture.html
     - https://www.nytimes.com/interactive/2016/08/20/sports/olympics/decisive-moments-rio-olympics-composite-pictures.html?rref=collection%2Fspotlightcollection%2Frio-olympics-2016-interactive-stories&action=click&contentCollection=olympics&region=stream&module=stream_unit&version=latest&contentPlacement=2&pgtype=collection
+  - Good design:
+    - https://www.futurefabric.co.uk/work
